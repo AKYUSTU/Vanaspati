@@ -1,0 +1,162 @@
+:root {
+  --forest-deep: #1a3a2a;
+  --forest-mid: #2c5f3f;
+  --forest-light: #4a8c5c;
+  --sage: #7baf7b;
+  --sage-light: #b8d4b8;
+  --parchment: #f5efe0;
+  --cream: #fdfaf3;
+  --warm-white: #ffffff;
+  --gold: #c9922a;
+  --gold-light: #e8b84b;
+  --gold-dark: #a07020;
+  --gold-pale: #fbf0d8;
+  --terracotta: #a0522d;
+  --terracotta-light: #e8c4a8;
+  --sienna: #8b4513;
+  --text-dark: #1c1208;
+  --text-mid: #3d2b1f;
+  --text-soft: #7a6555;
+  --text-muted: #a89880;
+  --success: #2c5f3f;
+  --warning: #c9922a;
+  --danger: #c0392b;
+  --info: #2c6e8a;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 50px;
+  --shadow-card: 0 4px 24px rgba(26, 58, 42, 0.08);
+  --shadow-hover: 0 12px 40px rgba(26, 58, 42, 0.16);
+  --shadow-modal: 0 24px 80px rgba(26, 58, 42, 0.24);
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ── Legacy aliases used in several module CSS files ── */
+  --leaf: #4a8c5c;
+  --leaf-dark: #2c5f3f;
+  --line: rgba(0, 0, 0, 0.09);
+  --paper-text: #1c1208;
+  --paper-text-secondary: #7a6555;
+  --paper-bg: #fdfaf3;
+  --paper: #fdfaf3;
+  --mint: #d4edda;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text-mid);
+  background:
+    radial-gradient(circle at 10% 10%, rgba(201, 146, 42, 0.08), transparent 35%),
+    radial-gradient(circle at 90% 20%, rgba(123, 175, 123, 0.16), transparent 40%),
+    var(--parchment);
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--forest-light);
+  outline-offset: 3px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--space-10) var(--space-6);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge-ayurveda { background: #e8f4ec; color: #2c5f3f; border: 1px solid #2c5f3f33; }
+.badge-yoga { background: #e8f0f8; color: #4a7ba7; border: 1px solid #4a7ba733; }
+.badge-unani { background: #f5ede6; color: #8b5e3c; border: 1px solid #8b5e3c33; }
+.badge-siddha { background: #f0ebf8; color: #6b3fa0; border: 1px solid #6b3fa033; }
+.badge-homeopathy { background: #e8f4f4; color: #3a7b7b; border: 1px solid #3a7b7b33; }
+
+@media print {
+  .navWrap,
+  .footer,
+  .fab,
+  .toast,
+  button,
+  .menuBtn {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 11pt;
+  }
+
+  main {
+    padding: 0;
+    max-width: none;
+  }
+
+  h2 {
+    page-break-before: always;
+  }
+}

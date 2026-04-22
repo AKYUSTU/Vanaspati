@@ -1,0 +1,108 @@
+.panel {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 360px;
+  background: var(--cream);
+  box-shadow: var(--shadow-modal);
+  padding: 16px;
+  display: grid;
+  gap: 10px;
+  overflow: auto;
+}
+
+.close {
+  justify-self: end;
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.cta {
+  border: none;
+  border-radius: 999px;
+  background: var(--forest-light);
+  color: #fff;
+  padding: 10px 14px;
+}
+
+.meta {
+  margin: 0;
+  color: var(--paper-text-secondary);
+  font-size: 0.9rem;
+}
+
+.stats {
+  background: rgba(74, 140, 92, 0.08);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+}
+
+.section {
+  border-top: 1px solid var(--line);
+  padding-top: 8px;
+}
+
+.section h4 {
+  margin: 0 0 8px;
+}
+
+.list,
+.searchList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  padding: 6px 8px;
+}
+
+.listItem button,
+.searchList button,
+.deleteZone {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  padding: 6px 8px;
+  cursor: pointer;
+}
+
+.scientific {
+  font-size: 0.8rem;
+  color: var(--paper-text-secondary);
+}
+
+.search {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 7px 9px;
+}
+
+.empty,
+.note {
+  margin: 0;
+  color: var(--paper-text-secondary);
+  font-size: 0.9rem;
+}
+
+.deleteZone {
+  margin-top: 8px;
+  background: #fee2e2;
+  border-color: #fecaca;
+  color: #991b1b;
+}

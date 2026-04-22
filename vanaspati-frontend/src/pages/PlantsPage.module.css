@@ -1,0 +1,16 @@
+.layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 16px;
+}
+
+.summary {
+  margin: 0 0 10px;
+  color: var(--text-soft);
+}
+
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,13 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "npm run build": true,
+        "mvn -q -DskipTests compile": true,
+        "/^Set-Location 'd:\\\\Downloads\\\\vanaspati\\\\vanaspati-backend'; mvn -q -DskipTests=false test$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "npm run lint": true
+    },
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "java.compile.nullAnalysis.mode": "automatic"
+}

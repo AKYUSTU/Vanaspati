@@ -1,0 +1,21 @@
+.toc {
+  position: sticky;
+  top: 90px;
+  padding: 16px;
+  background: var(--cream);
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+  display: grid;
+  gap: 8px;
+}
+
+.toc a {
+  border-left: 3px solid transparent;
+  padding-left: 8px;
+  color: var(--text-soft);
+}
+
+.toc a:hover {
+  border-left-color: var(--gold);
+  color: var(--text-mid);
+}

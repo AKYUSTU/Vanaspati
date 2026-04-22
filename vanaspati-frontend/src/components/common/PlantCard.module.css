@@ -1,0 +1,76 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--cream);
+  border: 1.5px solid rgba(0,0,0,0.07);
+  box-shadow: var(--shadow-card);
+  transition: all 0.25s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--forest-light);
+}
+
+.imageWrap {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.card:hover .image {
+  transform: scale(1.06);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(26, 58, 42, 0.4) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.content h3 {
+  font-size: 1.05rem;
+  color: var(--text-dark);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.scientificName {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.desc {
+  font-size: 0.82rem;
+  color: var(--text-soft);
+  line-height: 1.4;
+  margin: 0;
+  margin-top: 4px;
+}

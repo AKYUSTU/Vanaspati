@@ -1,0 +1,82 @@
+.wrap {
+  display: grid;
+  gap: 8px;
+}
+
+.mainButton {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.mainImage {
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.thumbGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 8px;
+}
+
+.thumbBtn {
+  border: 1px solid var(--line);
+  padding: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: transparent;
+  cursor: pointer;
+}
+
+.thumbBtn.active {
+  border: 2px solid var(--leaf);
+}
+
+.thumbImage {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: grid;
+  place-items: center;
+  z-index: 1300;
+  padding: 20px;
+}
+
+.dialog {
+  display: grid;
+  gap: 8px;
+  max-width: 920px;
+  width: 100%;
+}
+
+.lightboxImage {
+  width: 100%;
+  max-height: 76vh;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #111;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.controlBtn {
+  border-radius: 8px;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}

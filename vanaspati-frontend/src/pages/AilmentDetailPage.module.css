@@ -1,0 +1,70 @@
+.root {
+  display: grid;
+  gap: 1rem;
+}
+
+.back {
+  color: var(--leaf);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--leaf);
+  font-weight: 600;
+}
+
+.desc {
+  margin: 0;
+  color: var(--paper-text-secondary);
+}
+
+.section {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.8rem;
+}
+
+.card {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.85rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.card h4,
+.card p {
+  margin: 0;
+}
+
+.scientific {
+  color: var(--paper-text-secondary);
+  font-size: 0.85rem;
+}
+
+.meta {
+  color: var(--paper-text-secondary);
+  font-size: 0.85rem;
+}
+
+.link {
+  justify-self: start;
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  background: #fff;
+  color: var(--paper-text);
+}
+
+.muted {
+  color: var(--paper-text-secondary);
+}

@@ -1,0 +1,102 @@
+.fab {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: none;
+  background: var(--forest-light);
+  color: #fff;
+  box-shadow: 0 0 0 0 rgba(74, 140, 92, 0.55);
+  animation: pulse 2s infinite;
+  z-index: 80;
+}
+
+.panel {
+  position: fixed;
+  right: 20px;
+  bottom: 88px;
+  width: 380px;
+  height: 560px;
+  border-radius: 20px;
+  background: var(--cream);
+  box-shadow: var(--shadow-modal);
+  display: grid;
+  grid-template-rows: auto 1fr auto auto;
+  z-index: 79;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.messages {
+  padding: 16px;
+  overflow-y: auto;
+  display: grid;
+  gap: 10px;
+}
+
+.msg {
+  padding: 10px 12px;
+  border-radius: 14px;
+  max-width: 85%;
+}
+
+.user {
+  justify-self: end;
+  background: var(--forest-light);
+  color: #fff;
+}
+
+.assistant {
+  background: rgba(74,140,92,0.12);
+}
+
+.suggestions {
+  padding: 0 16px 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.suggestions button {
+  border-radius: 999px;
+  border: 1px solid rgba(74,140,92,0.25);
+  padding: 8px 10px;
+  background: transparent;
+}
+
+.inputRow {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  padding: 16px;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+.inputRow input {
+  border-radius: 999px;
+  border: 1px solid rgba(74,140,92,0.25);
+  padding: 10px 14px;
+}
+
+.inputRow button {
+  border: none;
+  border-radius: 999px;
+  background: var(--forest-light);
+  color: #fff;
+  padding: 0 14px;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(74,140,92,0.55); }
+  70% { box-shadow: 0 0 0 18px rgba(74,140,92,0); }
+  100% { box-shadow: 0 0 0 0 rgba(74,140,92,0); }
+}

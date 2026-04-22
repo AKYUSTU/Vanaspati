@@ -1,0 +1,8 @@
+.progress {
+  transition: stroke-dashoffset 0.4s ease;
+}
+
+.label {
+  fill: #1a3a2a;
+  font-size: 14px;
+}

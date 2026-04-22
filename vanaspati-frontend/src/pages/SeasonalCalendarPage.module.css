@@ -1,0 +1,291 @@
+.page {
+  display: grid;
+  gap: 26px;
+}
+
+.hero {
+  display: grid;
+  gap: 10px;
+  max-width: 760px;
+}
+
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.74rem;
+  color: var(--forest-light);
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.05;
+}
+
+.lead {
+  margin: 0;
+  max-width: 62ch;
+  color: var(--text-soft);
+}
+
+.monthSelector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 14px;
+  border-radius: 18px;
+  background: linear-gradient(160deg, rgba(252, 255, 249, 0.96), rgba(239, 249, 238, 0.96));
+  box-shadow: 0 16px 34px rgba(26, 70, 40, 0.08);
+}
+
+.monthButton {
+  border: 1px solid rgba(44, 95, 63, 0.18);
+  background: rgba(255, 255, 255, 0.74);
+  color: var(--forest-dark);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 220ms ease, background-color 220ms ease, color 220ms ease;
+}
+
+.monthButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(44, 95, 63, 0.14);
+  background: rgba(249, 255, 247, 0.95);
+}
+
+.monthButtonActive {
+  background: linear-gradient(140deg, rgba(42, 110, 63, 1), rgba(57, 132, 75, 1));
+  border-color: rgba(30, 93, 52, 1);
+  color: #f5fff3;
+  box-shadow: 0 10px 22px rgba(36, 97, 55, 0.25);
+}
+
+.abundance {
+  display: grid;
+  gap: 18px;
+  border-radius: 24px;
+  padding: 24px;
+  background:
+    radial-gradient(circle at top right, rgba(120, 196, 123, 0.18), transparent 44%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(241, 249, 237, 0.95));
+  box-shadow: 0 18px 40px rgba(32, 83, 48, 0.12);
+}
+
+.abundanceHeader {
+  display: grid;
+  gap: 8px;
+}
+
+.abundanceHeader h2 {
+  margin: 0;
+  font-size: clamp(1.25rem, 2.8vw, 1.9rem);
+  color: var(--forest-dark);
+  letter-spacing: 0.01em;
+}
+
+.abundanceHeader p {
+  margin: 0;
+  color: var(--text-soft);
+  max-width: 62ch;
+}
+
+.herbGrid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+
+.herbCard {
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(44, 95, 63, 0.08);
+  box-shadow: 0 10px 28px rgba(27, 78, 45, 0.12);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.herbCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(44, 95, 63, 0.24);
+  box-shadow: 0 18px 34px rgba(24, 79, 45, 0.18);
+}
+
+.herbImageWrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background:
+    radial-gradient(circle at 10% 18%, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0)),
+    linear-gradient(140deg, #dcead6, #edf6e7);
+  transition: background 220ms ease;
+}
+
+.herbCard img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-position: var(--herb-focus, 50% 50%);
+}
+
+.herbImageLandscape img {
+  object-fit: cover;
+}
+
+.herbImagePortrait img {
+  object-fit: contain;
+  padding: 8px;
+}
+
+.herbCardBody {
+  display: grid;
+  gap: 8px;
+  padding: 14px 14px 16px;
+}
+
+.herbCardBody h3 {
+  margin: 0;
+  font-size: 1.08rem;
+  color: var(--forest-dark);
+}
+
+.herbCardBody p {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.45;
+  font-size: 0.95rem;
+}
+
+.tableWrap {
+  overflow-x: auto;
+  border-radius: 22px;
+  box-shadow: var(--shadow-card);
+  background: linear-gradient(180deg, rgba(255, 252, 246, 0.98), rgba(245, 238, 224, 0.98));
+}
+
+.table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+}
+
+.table thead th {
+  text-align: left;
+  padding: 17px 14px;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--forest-dark);
+  border-bottom: 1px solid rgba(44, 95, 63, 0.1);
+}
+
+.activeMonthHeader {
+  color: #1d6b37;
+  background: rgba(122, 198, 121, 0.16);
+}
+
+.table tbody th,
+.table tbody td {
+  padding: 17px 14px;
+  border-bottom: 1px solid rgba(44, 95, 63, 0.08);
+  vertical-align: top;
+}
+
+.table tbody th {
+  width: 280px;
+}
+
+.table tbody th span {
+  display: block;
+  font-size: 1rem;
+  color: var(--forest-dark);
+}
+
+.table tbody th small {
+  display: block;
+  margin-top: 6px;
+  color: var(--text-soft);
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.table tbody td {
+  text-align: center;
+  transition: background-color 220ms ease;
+}
+
+.activeMonthColumn {
+  background: rgba(126, 197, 121, 0.14);
+}
+
+.activeDot,
+.inactiveDot {
+  display: inline-flex;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.activeDot {
+  background: #2f8f45;
+  box-shadow: 0 0 0 4px rgba(57, 143, 69, 0.18);
+}
+
+.inactiveDot {
+  background: rgba(44, 95, 63, 0.24);
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  color: var(--text-soft);
+}
+
+.legend div {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .abundance {
+    padding: 18px;
+  }
+
+  .monthSelector {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .monthButton {
+    padding: 7px 11px;
+    font-size: 0.86rem;
+  }
+
+  .table tbody th {
+    width: 220px;
+  }
+}
+
+.disclaimer {
+  margin-top: 10px;
+  padding: 16px 20px;
+  background: rgba(255, 248, 230, 0.85); /* gentle warning background */
+  border-left: 4px solid #eab308;
+  border-radius: 6px;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.disclaimer p {
+  margin: 0;
+}
+
+.disclaimer strong {
+  color: #a16207;
+}

@@ -1,0 +1,122 @@
+.root {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 1rem;
+}
+
+.sidebar {
+  position: sticky;
+  top: 90px;
+  height: fit-content;
+  background: var(--cream);
+  border-radius: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+}
+
+.initials {
+  margin: 0;
+  width: 58px;
+  height: 58px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: var(--leaf);
+  color: var(--paper);
+  font-size: 1.25rem;
+}
+
+.meta {
+  margin: 0.4rem 0;
+  color: var(--text-soft);
+}
+
+.level {
+  margin: 0.6rem 0 0;
+}
+
+.content {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.card {
+  background: var(--cream);
+  border-radius: 1rem;
+  border: 1px solid var(--line);
+  padding: 1rem;
+}
+
+.headingRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.clearBtn {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  padding: 0.45rem 0.75rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+}
+
+.clearBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0.6rem 0 0;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  background: color-mix(in srgb, var(--paper) 70%, var(--mint) 30%);
+}
+
+.row small {
+  color: var(--text-soft);
+  text-align: right;
+}
+
+.empty {
+  color: var(--text-soft);
+  margin: 0.35rem 0 0;
+}
+
+.guestState {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+@media (max-width: 900px) {
+  .root {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .row small {
+    text-align: left;
+  }
+}

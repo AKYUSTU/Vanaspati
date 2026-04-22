@@ -1,0 +1,14 @@
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 99;
+  padding: 12px 16px;
+  border-radius: 12px;
+  color: #fff;
+  box-shadow: var(--shadow-card);
+}
+
+.success { background: var(--success); }
+.error { background: var(--danger); }
+.info { background: var(--info); }

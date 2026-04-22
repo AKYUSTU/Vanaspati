@@ -1,0 +1,233 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.backLink {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: var(--leaf);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.backLink:hover {
+  color: #3d7050;
+  text-decoration: underline;
+}
+
+.detailCard {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--line);
+}
+
+.titleSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.titleSection h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: var(--paper-text);
+  flex: 1;
+}
+
+.difficulty {
+  padding: 0.4rem 0.8rem;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.difficultyBEGINNER {
+  background: #d4edda;
+  color: #155724;
+}
+
+.difficultyINTERMEDIATE {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.difficultyADVANCED {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.meta {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.metaItem {
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+
+.label {
+  font-weight: 600;
+  color: var(--paper-text-secondary);
+  min-width: 90px;
+}
+
+.value {
+  color: var(--paper-text);
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.section h2 {
+  font-size: 1.3rem;
+  color: var(--paper-text);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.description {
+  color: var(--paper-text-secondary);
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.ingredientList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.ingredientItem {
+  padding: 1rem;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.ingredientName {
+  font-weight: 600;
+  color: var(--paper-text);
+  margin-bottom: 0.3rem;
+}
+
+.quantity {
+  color: var(--leaf);
+  font-weight: 500;
+  margin-right: 0.5rem;
+}
+
+.plantReference {
+  color: var(--paper-text-secondary);
+  font-size: 0.9rem;
+}
+
+.notes {
+  margin: 0.5rem 0 0;
+  color: var(--paper-text-secondary);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.stepsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.stepItem {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1rem;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.stepNumber {
+  width: 30px;
+  height: 30px;
+  background: var(--leaf);
+  color: white;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.stepText {
+  color: var(--paper-text);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.precautions {
+  background: #fff8dc;
+  border: 1px solid #f0d98a;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.precautions h2 {
+  color: #856404;
+  border-bottom-color: #f0d98a;
+}
+
+.precautions p {
+  color: #6b5500;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.error {
+  color: #d32f2f;
+  text-align: center;
+  padding: 2rem;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .detailCard {
+    padding: 1.2rem;
+  }
+
+  .titleSection h1 {
+    font-size: 1.5rem;
+  }
+
+  .metaItem {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .label {
+    min-width: auto;
+  }
+}

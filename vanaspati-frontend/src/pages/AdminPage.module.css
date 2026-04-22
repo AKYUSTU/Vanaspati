@@ -1,0 +1,270 @@
+.root {
+  display: grid;
+  gap: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header h1 {
+  margin: 0;
+  flex: 1;
+}
+
+.adminLinks {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.quizLink {
+  padding: 0.6rem 1rem;
+  background: var(--leaf);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.quizLink:hover {
+  background: #3d7050;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74, 140, 92, 0.2);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .quizLink {
+    width: 100%;
+    text-align: center;
+  }
+
+  .adminLinks {
+    width: 100%;
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.statCard,
+.panel {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.9rem;
+}
+
+.statLabel {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+}
+
+.statValue {
+  margin: 0.35rem 0 0;
+  font-size: 1.6rem;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.muted {
+  color: var(--text-soft);
+}
+
+.feedbackOk,
+.feedbackError {
+  margin: 0;
+  border-radius: 10px;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--line);
+}
+
+.feedbackOk {
+  background: color-mix(in srgb, #e7f8ec 75%, var(--paper) 25%);
+  color: #1d5f30;
+}
+
+.feedbackError {
+  background: color-mix(in srgb, #fdeaea 75%, var(--paper) 25%);
+  color: #8a1f1f;
+}
+
+.userTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.6rem;
+}
+
+.userTable th,
+.userTable td {
+  text-align: left;
+  padding: 0.55rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.userTable select {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  border-radius: 8px;
+  padding: 0.35rem 0.45rem;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 180px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.6rem;
+  resize: vertical;
+  background: var(--paper);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.actions {
+  margin-top: 0.65rem;
+  display: flex;
+  gap: 0.6rem;
+}
+
+.btn {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  border-radius: 8px;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+}
+
+.btnPrimary {
+  border: 1px solid transparent;
+  background: var(--leaf);
+  color: var(--paper);
+}
+
+.btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.resultBox {
+  margin-top: 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.6rem;
+  background: color-mix(in srgb, var(--paper) 70%, var(--mint) 30%);
+}
+
+.errors {
+  margin: 0.55rem 0 0;
+  padding-left: 1.1rem;
+}
+
+@media (max-width: 900px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .userTable {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .span2 {
+    grid-column: span 1;
+  }
+
+  .searchRow input {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .paginationRow {
+    justify-content: flex-start;
+  }
+}
+
+.formGrid {
+  margin-top: 0.6rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+.formGrid label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.92rem;
+}
+
+.formGrid input,
+.formGrid textarea,
+.formGrid select {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.5rem 0.55rem;
+  background: var(--paper);
+}
+
+.span2 {
+  grid-column: span 2;
+}
+
+.checkboxRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.searchRow {
+  display: flex;
+  gap: 0.55rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.searchRow input {
+  min-width: 300px;
+  flex: 1;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.5rem 0.55rem;
+  background: var(--paper);
+}
+
+.paginationRow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.55rem;
+  margin-top: 0.65rem;
+}

@@ -1,0 +1,14 @@
+.box {
+  border: 1px solid #c9922a66;
+  background: #fbf0d8;
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.heading {
+  color: #7b4d00;
+}
+
+.copy {
+  margin: 8px 0 0;
+}

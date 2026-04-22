@@ -1,0 +1,13 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.pill {
+  border: 1px solid rgba(74, 140, 92, 0.3);
+  background: rgba(123, 175, 123, 0.14);
+  border-radius: 999px;
+  padding: 6px 10px;
+}

@@ -1,0 +1,21 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.card {
+  background: var(--cream);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.label {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.value {
+  margin: 6px 0 0;
+  color: var(--text-soft);
+}

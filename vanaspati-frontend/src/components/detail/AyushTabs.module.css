@@ -1,0 +1,31 @@
+.wrap {
+  display: grid;
+  gap: 10px;
+}
+
+.tabRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tabBtn {
+  border-radius: 999px;
+  border: 1px solid rgba(74, 140, 92, 0.3);
+  padding: 8px 12px;
+  background: transparent;
+  color: var(--text-mid);
+  cursor: pointer;
+  font: inherit;
+}
+
+.active {
+  background: var(--forest-light);
+  color: #fff;
+}
+
+.note {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.5;
+}

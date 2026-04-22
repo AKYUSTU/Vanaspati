@@ -1,0 +1,160 @@
+.page {
+  display: grid;
+  gap: 18px;
+}
+
+.header {
+  display: grid;
+  gap: 8px;
+  max-width: 760px;
+}
+
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.74rem;
+  color: var(--forest-light);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05;
+}
+
+.header p {
+  margin: 0;
+  color: var(--text-soft);
+}
+
+.controls {
+  position: relative;
+  max-width: 560px;
+  display: grid;
+  gap: 8px;
+}
+
+.label {
+  font-weight: 700;
+  color: var(--forest-dark);
+}
+
+.searchInput {
+  border: 1px solid rgba(44, 95, 63, 0.2);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font: inherit;
+  background: #fff;
+}
+
+.searchBox {
+  position: absolute;
+  top: 76px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  border-radius: 14px;
+  border: 1px solid rgba(44, 95, 63, 0.16);
+  background: #fff;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.searchItem {
+  width: 100%;
+  border: none;
+  border-top: 1px solid rgba(44, 95, 63, 0.08);
+  background: #fff;
+  text-align: left;
+  padding: 10px 12px;
+  cursor: pointer;
+  display: grid;
+  gap: 4px;
+}
+
+.searchItem:first-of-type {
+  border-top: none;
+}
+
+.searchItem small,
+.searchHint {
+  color: var(--text-soft);
+}
+
+.searchHint {
+  margin: 0;
+  padding: 10px 12px;
+}
+
+.selectedStrip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  background: rgba(44, 95, 63, 0.08);
+  color: var(--forest-dark);
+  padding: 8px 10px;
+  font-weight: 600;
+}
+
+.chip button {
+  border: none;
+  background: var(--forest-dark);
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.empty {
+  margin: 0;
+  color: var(--text-soft);
+}
+
+.tableWrap {
+  overflow-x: auto;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(255, 251, 243, 0.96), rgba(243, 236, 220, 0.96));
+  box-shadow: var(--shadow-card);
+}
+
+.table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 14px;
+  border-bottom: 1px solid rgba(44, 95, 63, 0.1);
+  vertical-align: top;
+}
+
+.table thead th {
+  text-align: left;
+  color: var(--forest-dark);
+  text-transform: uppercase;
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+}
+
+.table tbody th {
+  width: 220px;
+  color: var(--forest-dark);
+  text-align: left;
+}
+
+.description {
+  margin: 0;
+  color: var(--text-soft);
+}

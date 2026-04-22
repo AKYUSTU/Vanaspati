@@ -1,0 +1,128 @@
+.wrap {
+  padding: 2.5rem 0;
+}
+
+.eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--forest-light);
+  margin: 0 0 1rem;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-card);
+  border: 1.5px solid rgba(0,0,0,0.07);
+  align-items: center;
+}
+
+.imgWrap {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.card:hover img {
+  transform: scale(1.04);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  padding: 3px 10px;
+  background: var(--forest-light);
+  color: white;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.tagCurated {
+  padding: 3px 10px;
+  background: var(--gold-pale);
+  color: var(--gold-dark);
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border: 1px solid var(--gold);
+}
+
+.body h3 {
+  font-size: 2rem;
+  margin: 0;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+.scientific {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.desc {
+  color: var(--text-soft);
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  background: var(--forest-deep);
+  color: white;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  align-self: flex-start;
+}
+
+.cta:hover {
+  background: var(--forest-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(26, 58, 42, 0.25);
+}
+
+@media (max-width: 720px) {
+  .card {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .imgWrap {
+    max-height: 220px;
+  }
+  .body h3 {
+    font-size: 1.5rem;
+  }
+}
