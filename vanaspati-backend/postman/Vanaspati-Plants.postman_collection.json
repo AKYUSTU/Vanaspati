@@ -1,0 +1,72 @@
+{
+  "info": {
+    "name": "Vanaspati Plants API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Plants",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/plants?page=0&size=12&sort=commonName",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "plants"],
+          "query": [
+            {"key": "page", "value": "0"},
+            {"key": "size", "value": "12"},
+            {"key": "sort", "value": "commonName"}
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Plant By Id",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/plants/1"
+      }
+    },
+    {
+      "name": "Search Plants",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/plants/search?q=tulsi"
+      }
+    },
+    {
+      "name": "Herb Of Day",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/plants/herb-of-day"
+      }
+    },
+    {
+      "name": "Compare Plants",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/plants/compare?ids=1,2,3"
+      }
+    },
+    {
+      "name": "Plants By Body Part",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/plants/by-body-part?part=JOINTS"
+      }
+    },
+    {
+      "name": "Track Plant View",
+      "request": {
+        "method": "POST",
+        "url": "{{baseUrl}}/api/plants/1/view"
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ]
+}
