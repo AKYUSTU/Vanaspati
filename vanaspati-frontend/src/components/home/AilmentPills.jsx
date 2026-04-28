@@ -2,18 +2,18 @@ import { useNavigate } from 'react-router-dom';
 import styles from './AilmentPills.module.css';
 
 const ailments = [
-  { label: '🌡️ Fever', query: 'Fever' },
-  { label: '🌀 Digestion', query: 'Digestion' },
-  { label: '🛡️ Immunity', query: 'Immunity' },
-  { label: '✨ Skin Care', query: 'Skin' },
-  { label: '🧘 Stress & Anxiety', query: 'Stress' },
-  { label: '🩸 Diabetes', query: 'Diabetes' },
-  { label: '🦴 Joint Pain', query: 'Joint' },
-  { label: '💨 Respiratory', query: 'Respiratory' },
-  { label: '😴 Better Sleep', query: 'Sleep' },
-  { label: '💇 Hair Growth', query: 'Hair' },
-  { label: '👁️ Eye Care', query: 'Eye' },
-  { label: '🧠 Memory & Focus', query: 'Memory' },
+  { label: '🌡️ Fever', id: 1 },
+  { label: '🌀 Digestion', id: 2 },
+  { label: '🛡️ Immunity', id: 3 },
+  { label: '✨ Skin Care', id: 4 },
+  { label: '🧘 Stress & Anxiety', id: 5 },
+  { label: '🩸 Diabetes', id: 6 },
+  { label: '🦴 Joint Pain', id: 7 },
+  { label: '💨 Respiratory', id: 8 },
+  { label: '😴 Better Sleep', id: 9 },
+  { label: '💇 Hair Growth', id: 10 },
+  { label: '👁️ Eye Care', id: 11 },
+  { label: '🧠 Memory & Focus', id: 12 },
 ];
 
 export default function AilmentPills() {
@@ -29,7 +29,7 @@ export default function AilmentPills() {
             key={item.label}
             type="button"
             className={styles.pill}
-            onClick={() => navigate('/ailments')}
+            onClick={() => navigate(`/ailments/${item.id}`)}
           >
             {item.label}
           </button>

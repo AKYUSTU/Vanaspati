@@ -6,6 +6,7 @@ import styles from './Navbar.module.css';
 const links = [
   ['Plants', '/plants'],
   ['Garden', '/garden'],
+  ['Ailments', '/ailments'],
   ['Quiz', '/quiz'],
   ['Remedies', '/remedies'],
   ['Learn', '/learn'],

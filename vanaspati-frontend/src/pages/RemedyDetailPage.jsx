@@ -1,14 +1,18 @@
 import { useParams, Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { fetchRemedyById } from '../api/remedy';
+import { enrichRemedy } from '../utils/remedyEnrichment';
 import styles from './RemedyDetailPage.module.css';
 
 export default function RemedyDetailPage() {
   const { id } = useParams();
-  const { data: remedy, isLoading, error } = useQuery({
+  const { data: rawRemedy, isLoading, error } = useQuery({
     queryKey: ['remedy-detail', id],
     queryFn: () => fetchRemedyById(id),
   });
+
+  // Enrich sparse DB content with detailed descriptions and steps
+  const remedy = enrichRemedy(rawRemedy);
 
   if (isLoading) {
     return <main className={styles.container}><p>Loading remedy details...</p></main>;
@@ -72,7 +76,9 @@ export default function RemedyDetailPage() {
         {remedy.description && (
           <section className={styles.section}>
             <h2>About This Remedy</h2>
-            <p className={styles.description}>{remedy.description}</p>
+            {remedy.description.split('\n\n').map((para, i) => (
+              <p key={i} className={styles.description}>{para.trim()}</p>
+            ))}
           </section>
         )}
 

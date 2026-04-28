@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { useParams } from 'react-router-dom';
 import { getPlant } from '../api/plants';
 import ImageGallery from '../components/detail/ImageGallery';
-import OriginMap from '../components/detail/OriginMap';
+import GrowingRegions from '../components/detail/GrowingRegions';
 import AyushTabs from '../components/detail/AyushTabs';
 import CultivationCards from '../components/detail/CultivationCards';
 import RecipeCard from '../components/detail/RecipeCard';
@@ -66,7 +66,7 @@ export default function PlantDetailPage() {
           <p>{plant?.scientificName}</p>
           <p className={styles.muted}>{plant?.description || 'No detailed description is currently available for this record.'}</p>
           <ImageGallery mainImageUrl={plant?.mainImageUrl} galleryImages={galleryImages} commonName={plant?.commonName} />
-          <OriginMap nativeRegion={plant?.nativeRegion} nativeLat={plant?.nativeLat} nativeLng={plant?.nativeLng} />
+          <GrowingRegions commonName={plant?.commonName} nativeRegion={plant?.nativeRegion} />
         </section>
 
         {plant?.morphology ? (
