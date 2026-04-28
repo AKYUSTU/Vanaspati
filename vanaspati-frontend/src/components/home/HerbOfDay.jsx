@@ -15,7 +15,7 @@ export default function HerbOfDay() {
   const isLive = Boolean(data?.commonName);
 
   const slug = encodeURIComponent((herb.commonName || 'herb').toLowerCase().replace(/\s+/g, '-'));
-  const href = herb.id && !herb.id.startsWith('fallback') ? `/plants/${herb.id}/${slug}` : '/plants';
+  const href = herb.id && !String(herb.id).startsWith('fallback') ? `/plants/${herb.id}/${slug}` : '/plants';
 
   return (
     <section className={styles.wrap}>

@@ -1,14 +1,46 @@
+import { useEffect, useState } from 'react';
 import styles from './StatCounters.module.css';
+import client from '../../api/client';
 
-const stats = [
-  { value: '350+', label: 'Medicinal Plants', icon: '🌿' },
-  { value: '5', label: 'AYUSH Systems', icon: '☯️' },
-  { value: '500+', label: 'Traditional Remedies', icon: '🧪' },
-  { value: '12+', label: 'Body Systems', icon: '🧬' },
-  { value: '10,000+', label: 'Active Users', icon: '👥' },
-];
+async function fetchLiveStats() {
+  const [plantsRes, remediesRes] = await Promise.allSettled([
+    client.get('/api/plants?page=0&size=1'),
+    client.get('/api/remedies/paged?page=0&size=1'),
+  ]);
+
+  const plantCount =
+    plantsRes.status === 'fulfilled'
+      ? (plantsRes.value.data?.totalElements ?? null)
+      : null;
+
+  const remedyCount =
+    remediesRes.status === 'fulfilled'
+      ? (remediesRes.value.data?.totalElements ?? null)
+      : null;
+
+  return { plantCount, remedyCount };
+}
 
 export default function StatCounters() {
+  const [counts, setCounts] = useState({ plantCount: null, remedyCount: null });
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    fetchLiveStats()
+      .then((data) => { setCounts(data); setLoaded(true); })
+      .catch(() => setLoaded(true));
+  }, []);
+
+  const fmt = (n) => (n === null ? (loaded ? '—' : '…') : n.toLocaleString());
+
+  const stats = [
+    { value: fmt(counts.plantCount),  label: 'Medicinal Plants',      icon: '🌿' },
+    { value: '5',                      label: 'AYUSH Systems',          icon: '☯️' },
+    { value: fmt(counts.remedyCount), label: 'Traditional Remedies',   icon: '🧪' },
+    { value: '15',                     label: 'Body Systems',           icon: '🧬' },
+    { value: 'Growing!',              label: 'Active Users',            icon: '👥' },
+  ];
+
   return (
     <section className={styles.wrap}>
       {stats.map(({ value, label, icon }) => (

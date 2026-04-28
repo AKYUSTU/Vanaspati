@@ -32,6 +32,7 @@ public class GardenService {
     private final UserRepository userRepository;
     private final PlantMapper plantMapper;
 
+    @Transactional(readOnly = true)
     public List<GardenZoneDTO> getZones(String userEmail) {
         List<GardenZone> zones;
         Long userId = null;
@@ -51,6 +52,7 @@ public class GardenService {
             .toList();
     }
 
+    @Transactional(readOnly = true)
     public GardenZonePlantsDTO getZonePlants(Long zoneId, String userEmail) {
         GardenZone zone = resolveAccessibleZone(zoneId, userEmail);
         List<PlantSummaryDTO> plants = plantGardenZoneRepository.findByZone_Id(zoneId).stream()

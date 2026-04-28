@@ -1,3 +1,4 @@
+// Restore clean garden map — no region dots (those belong on the plant detail map)
 function fallbackPath(index) {
   const col = index % 3;
   const row = Math.floor(index / 3);
@@ -12,6 +13,8 @@ export default function GardenSVGMap({ zones = [], activeZone, onZoneClick }) {
   return (
     <svg viewBox="0 0 1200 900" width="100%" role="img" aria-label="Garden map">
       <rect x="0" y="0" width="1200" height="900" fill="#eaf3e1" />
+
+      {/* Zone shapes */}
       {zones.map((zone, index) => (
         <path
           key={zone.id}
@@ -25,6 +28,7 @@ export default function GardenSVGMap({ zones = [], activeZone, onZoneClick }) {
         />
       ))}
 
+      {/* Zone labels */}
       {zones.map((zone, index) => (
         <text
           key={`label-${zone.id}`}

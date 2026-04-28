@@ -32,12 +32,14 @@ public class RemedyService {
     private final RemedyStepRepository remedyStepRepository;
     private final PlantRepository plantRepository;
 
+    @Transactional(readOnly = true)
     public List<RemedySummaryDTO> getAllRemedies() {
         return remedyRepository.findAll().stream()
             .map(this::toSummaryDto)
             .toList();
     }
 
+    @Transactional(readOnly = true)
     public Page<RemedySummaryDTO> getRemediesPaged(int page, int size, String sortBy) {
         Sort sort = sortBy.equals("rating") 
             ? Sort.by(Sort.Direction.DESC, "ratingAvg")
@@ -47,6 +49,7 @@ public class RemedyService {
             .map(this::toSummaryDto);
     }
 
+    @Transactional(readOnly = true)
     public Page<RemedySummaryDTO> searchRemedies(String query, int page, int size) {
         Pageable pageable = PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "createdAt"));
         String searchTerm = "%" + (query == null ? "" : query.toLowerCase()) + "%";
@@ -61,6 +64,7 @@ public class RemedyService {
             ));
     }
 
+    @Transactional(readOnly = true)
     public RemedyDetailDTO getRemedyById(Long id) {
         Remedy remedy = remedyRepository.findById(id)
             .orElseThrow(() -> new ResourceNotFoundException("Remedy not found: " + id));

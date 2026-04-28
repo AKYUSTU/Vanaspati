@@ -84,70 +84,90 @@ export default function GardenMapPage() {
   return (
     <main className={styles.root}>
       <section className={styles.topBar}>
-        <span className={styles.topText}>Welcome to the Vanaspati Garden - Click a zone to explore plants</span>
-        <span className={styles.hint}>{token ? 'You can create personal zones and assign plants.' : 'Sign in to create your own zones.'}</span>
+        <span className={styles.topText}>Welcome to the Vanaspati Garden — Click a zone to explore plants</span>
+        {token
+          ? <span className={styles.hint}>You can create personal zones and assign plants.</span>
+          : <a href="/login" className={styles.hintLink}>Sign in to create your own zones →</a>
+        }
       </section>
 
       <div className={styles.layout}>
         <div className={styles.mapWrap}>
-          <GardenSVGMap zones={zones} activeZone={activeZone} onZoneClick={(zone) => setActiveZoneId(zone.id)} />
+          <GardenSVGMap
+            zones={zones}
+            activeZone={activeZone}
+            onZoneClick={(zone) => setActiveZoneId(zone.id)}
+          />
         </div>
 
+        {/* Right panel: shows zone detail when a zone is selected, else shows create form */}
         <aside className={styles.createPanel}>
-          <h3>Create Personal Zone</h3>
-          {!token ? <p className={styles.message}>Sign in to create and edit personal garden zones.</p> : null}
-          <input
-            placeholder="Zone name"
-            value={newZone.zoneName}
-            onChange={(event) => setNewZone((prev) => ({ ...prev, zoneName: event.target.value }))}
-            disabled={!token}
-          />
-          <textarea
-            rows={3}
-            placeholder="Short description"
-            value={newZone.description}
-            onChange={(event) => setNewZone((prev) => ({ ...prev, description: event.target.value }))}
-            disabled={!token}
-          />
-          <div className={styles.row}>
-            <input
-              placeholder="#4A8C5C"
-              value={newZone.colorHex}
-              onChange={(event) => setNewZone((prev) => ({ ...prev, colorHex: event.target.value }))}
-              disabled={!token}
+          {activeZone ? (
+            <ZonePanel
+              zone={activeZone}
+              plants={zonePlantsData?.plants || []}
+              searchTerm={searchTerm}
+              onSearchTermChange={setSearchTerm}
+              plantSearchResults={plantSearchResults}
+              onAddPlant={(plantId) => assignPlantMutation.mutate({ zoneId: activeZoneId, plantId })}
+              onRemovePlant={(plantId) => removePlantMutation.mutate({ zoneId: activeZoneId, plantId })}
+              onDeleteZone={() => deleteZoneMutation.mutate(activeZoneId)}
+              canManage={Boolean(token && activeZone?.userOwned)}
+              pending={
+                assignPlantMutation.isPending ||
+                removePlantMutation.isPending ||
+                deleteZoneMutation.isPending
+              }
+              onClose={() => setActiveZoneId(null)}
             />
-            <input
-              placeholder="Icon"
-              value={newZone.iconEmoji}
-              onChange={(event) => setNewZone((prev) => ({ ...prev, iconEmoji: event.target.value }))}
-              disabled={!token}
-            />
-          </div>
-          <button
-            type="button"
-            className={styles.primaryBtn}
-            disabled={!token || !newZone.zoneName.trim() || createZoneMutation.isPending}
-            onClick={() => createZoneMutation.mutate(newZone)}
-          >
-            {createZoneMutation.isPending ? 'Creating...' : 'Create Zone'}
-          </button>
-          {createZoneMutation.error ? <p className={styles.error}>Unable to create zone.</p> : null}
+          ) : (
+            <>
+              <h3>Create Personal Zone</h3>
+              {!token ? (
+                <p className={styles.message}>
+                  <a href="/login" className={styles.signInLink}>Sign in</a> to create and edit personal garden zones.
+                </p>
+              ) : null}
+              <input
+                placeholder="Zone name"
+                value={newZone.zoneName}
+                onChange={(e) => setNewZone((prev) => ({ ...prev, zoneName: e.target.value }))}
+                disabled={!token}
+              />
+              <textarea
+                rows={3}
+                placeholder="Short description"
+                value={newZone.description}
+                onChange={(e) => setNewZone((prev) => ({ ...prev, description: e.target.value }))}
+                disabled={!token}
+              />
+              <div className={styles.row}>
+                <input
+                  placeholder="#4A8C5C"
+                  value={newZone.colorHex}
+                  onChange={(e) => setNewZone((prev) => ({ ...prev, colorHex: e.target.value }))}
+                  disabled={!token}
+                />
+                <input
+                  placeholder="Icon"
+                  value={newZone.iconEmoji}
+                  onChange={(e) => setNewZone((prev) => ({ ...prev, iconEmoji: e.target.value }))}
+                  disabled={!token}
+                />
+              </div>
+              <button
+                type="button"
+                className={styles.primaryBtn}
+                disabled={!token || !newZone.zoneName.trim() || createZoneMutation.isPending}
+                onClick={() => createZoneMutation.mutate(newZone)}
+              >
+                {createZoneMutation.isPending ? 'Creating...' : 'Create Zone'}
+              </button>
+              {createZoneMutation.error ? <p className={styles.error}>Unable to create zone.</p> : null}
+            </>
+          )}
         </aside>
       </div>
-
-      <ZonePanel
-        zone={activeZone}
-        plants={zonePlantsData?.plants || []}
-        searchTerm={searchTerm}
-        onSearchTermChange={setSearchTerm}
-        plantSearchResults={plantSearchResults}
-        onAddPlant={(plantId) => assignPlantMutation.mutate({ zoneId: activeZoneId, plantId })}
-        onRemovePlant={(plantId) => removePlantMutation.mutate({ zoneId: activeZoneId, plantId })}
-        onDeleteZone={() => deleteZoneMutation.mutate(activeZoneId)}
-        canManage={Boolean(token && activeZone?.userOwned)}
-        pending={assignPlantMutation.isPending || removePlantMutation.isPending || deleteZoneMutation.isPending}
-        onClose={() => setActiveZoneId(null)}
-      />
     </main>
   );
 }

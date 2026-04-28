@@ -6,13 +6,44 @@
 
 .art {
   background:
-    radial-gradient(circle at 20% 20%, rgba(201,146,42,0.25), transparent 35%),
-    radial-gradient(circle at 80% 30%, rgba(123,175,123,0.35), transparent 40%),
-    linear-gradient(140deg, #1a3a2a, #2c5f3f);
+    linear-gradient(135deg, rgba(10, 28, 18, 0.62) 0%, rgba(20, 50, 30, 0.5) 100%),
+    url('/auth-herbs-bg.jpg') center / cover no-repeat;
   color: #fff;
   padding: 48px;
   display: grid;
   align-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle vignette at the edges */
+.art::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.35) 100%);
+  pointer-events: none;
+}
+
+/* Keep text above overlay — force white so global styles don't override */
+.art h1,
+.art p {
+  position: relative;
+  z-index: 1;
+  color: #ffffff !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.art h1 {
+  font-size: 2rem;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.art p {
+  font-size: 1rem;
+  opacity: 0.92;
+  line-height: 1.6;
 }
 
 .formPane {
@@ -40,12 +71,45 @@
   color: #fff;
   padding: 11px 14px;
   font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.button:hover:not(:disabled) {
+  background: #38784b;
+  transform: translateY(-1px);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .error {
   color: var(--danger);
   font-size: 0.85rem;
   margin: 0;
+}
+
+/* "Need an account?" / "Already have an account?" — plain muted text */
+.switchText {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #6b7a6b;
+}
+
+/* Only the link word (Register / Login) is coloured and clickable */
+.switchLink {
+  color: var(--forest-light);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1.5px solid transparent;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.switchLink:hover {
+  color: #2d6b3f;
+  border-bottom-color: #2d6b3f;
 }
 
 @media (max-width: 960px) {

@@ -37,6 +37,32 @@
   backdrop-filter: blur(4px);
 }
 
+/* Clickable "Sign in" link in top bar */
+.hintLink {
+  color: #fff;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.18);
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.hintLink:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+/* Inline sign-in link inside create panel */
+.signInLink {
+  color: var(--forest-light);
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .layout {
   display: grid;
   grid-template-columns: 1fr 380px;
@@ -154,6 +180,10 @@
   color: var(--text-soft);
   font-size: 0.95rem;
   line-height: 1.5;
+  background: #f0f7f2;
+  border: 1px solid rgba(74,140,92,0.2);
+  border-radius: 10px;
+  padding: 10px 14px;
 }
 
 .error {

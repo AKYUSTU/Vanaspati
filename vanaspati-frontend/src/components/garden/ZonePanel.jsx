@@ -16,11 +16,15 @@ export default function ZonePanel({
   if (!zone) return null;
 
   return (
-    <aside className={styles.panel}>
-      <button type="button" onClick={onClose} className={styles.close}>x</button>
-      <h3>{zone.zoneName}</h3>
+    <div className={styles.panel}>
+      {/* ← Back button — always visible */}
+      <button type="button" onClick={onClose} className={styles.backBtn} aria-label="Back to garden">
+        ← Back to Garden
+      </button>
+
+      <h3 className={styles.zoneName}>{zone.zoneName}</h3>
       <p className={styles.meta}>{zone.systemName}</p>
-      <p>{zone.description}</p>
+      <p className={styles.description}>{zone.description}</p>
 
       <div className={styles.stats}>Plants in zone: {zone.plantCount ?? plants.length}</div>
 
@@ -53,7 +57,7 @@ export default function ZonePanel({
           <input
             className={styles.search}
             value={searchTerm}
-            onChange={(event) => onSearchTermChange(event.target.value)}
+            onChange={(e) => onSearchTermChange(e.target.value)}
             placeholder="Search plant name"
           />
           {searchTerm && plantSearchResults?.length ? (
@@ -77,6 +81,6 @@ export default function ZonePanel({
       ) : (
         <p className={styles.note}>System zones are read-only. Create a personal zone to customize assignments.</p>
       )}
-    </aside>
+    </div>
   );
 }

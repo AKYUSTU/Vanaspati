@@ -1,7 +1,9 @@
 import axios from 'axios';
 
 const client = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080',
+  // Empty baseURL = relative paths, routed through Vite proxy to http://localhost:8080
+  // This works whether accessed on localhost OR via local network IP (e.g. 10.60.213.207:5173)
+  baseURL: import.meta.env.VITE_API_BASE_URL || '',
   withCredentials: true,
 });
 

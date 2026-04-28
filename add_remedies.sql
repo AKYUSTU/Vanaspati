@@ -1,0 +1,12 @@
+-- Add 6 more remedies to cover all 40 plants (currently 34 exist)
+INSERT INTO remedies (name, for_ailment, difficulty, prep_time_minutes, description, precautions, rating_avg, rating_count, created_at) VALUES
+('Moringa Vitality Tea', 'Nutrition & Energy', 'BEGINNER', 8, 'A nutrient-dense morning tea brewed from dried Moringa leaves. Rich in iron, calcium, and vitamins A, C, and E to boost daily energy and immunity.', 'Avoid during pregnancy. May lower blood pressure — consult a doctor if on medication.', 0.00, 0, NOW()),
+('Kalonji Black Seed Honey', 'Immunity & Respiratory', 'BEGINNER', 5, 'Mix half teaspoon of crushed Kalonji seeds with raw honey and consume on an empty stomach. A centuries-old Unani remedy for strengthening immunity and clearing respiratory tract.', 'Avoid excess — limit to half teaspoon per day. Not for infants.', 0.00, 0, NOW()),
+('Shankhpushpi Memory Milk', 'Memory & Cognition', 'BEGINNER', 10, 'Simmer Shankhpushpi powder in warm milk with a pinch of cardamom. A traditional Ayurvedic formulation used to enhance memory, reduce mental fatigue, and calm an overactive mind.', 'Not recommended during pregnancy. May cause drowsiness in excess.', 0.00, 0, NOW()),
+('Nilavembu Fever Decoction', 'Fever & Infections', 'INTERMEDIATE', 20, 'A powerful Siddha decoction made by boiling Nilavembu (Andrographis) leaves with ginger, pepper, and turmeric. Used extensively during seasonal fevers and viral infections.', 'Very bitter — use in prescribed doses only. Not for pregnant women or those with low blood pressure.', 0.00, 0, NOW()),
+('Vacha Digestive Powder', 'Digestion & Bloating', 'BEGINNER', 5, 'A pinch of roasted Vacha (Sweet Flag) root powder taken with warm water after meals to relieve gas, indigestion, and abdominal bloating — a classic Ayurvedic digestive aid.', 'Use in very small amounts only. High doses can be emetic. Avoid in pregnancy.', 0.00, 0, NOW()),
+('Jatamansi Stress Relief Oil', 'Stress & Sleep', 'BEGINNER', 15, 'Jatamansi root infused in sesame oil, warmed and massaged on the scalp and temples before bedtime. Traditionally used in Ayurveda to calm nervous system, relieve anxiety, and improve sleep quality.', 'For external use. Do not ingest the oil. Patch test before use.', 0.00, 0, NOW());
+
+-- Verify remedy count
+SELECT COUNT(*) as total_remedies FROM remedies;
+SELECT id, name, for_ailment FROM remedies ORDER BY id DESC LIMIT 10;

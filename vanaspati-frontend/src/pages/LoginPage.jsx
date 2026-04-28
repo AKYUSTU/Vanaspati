@@ -39,7 +39,7 @@ export default function LoginPage() {
           <input className={styles.input} type="password" placeholder="Password" {...register('password')} />
           {errors.password && <p className={styles.error}>{errors.password.message}</p>}
           <button className={styles.button} disabled={mutation.isPending} type="submit">{mutation.isPending ? 'Signing in...' : 'Sign In'}</button>
-          <Link to="/register">Need an account? Register</Link>
+          <p className={styles.switchText}>Need an account? <Link to="/register" className={styles.switchLink}>Register</Link></p>
         </form>
       </section>
     </main>

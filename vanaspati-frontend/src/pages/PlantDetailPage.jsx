@@ -13,7 +13,18 @@ import styles from './PlantDetailPage.module.css';
 
 export default function PlantDetailPage() {
   const { id } = useParams();
-  const { data: plant } = useQuery({ queryKey: ['plant', id], queryFn: () => getPlant(id), enabled: Boolean(id) });
+  const { data: plant, isLoading } = useQuery({ queryKey: ['plant', id], queryFn: () => getPlant(id), enabled: Boolean(id) });
+
+  if (isLoading) {
+    return (
+      <main style={{display:'flex',alignItems:'center',justifyContent:'center',minHeight:'60vh',gap:'16px',flexDirection:'column'}}>
+        <div style={{width:'48px',height:'48px',border:'3px solid rgba(74,140,92,0.2)',borderTopColor:'#4a8c5c',borderRadius:'50%',animation:'spin 0.8s linear infinite'}} />
+        <p style={{fontFamily:"'Cormorant Garamond', serif",fontSize:'1.4rem',color:'#2c5f3f',margin:0}}>Loading plant details…</p>
+        <style>{`@keyframes spin{to{transform:rotate(360deg)}}`}</style>
+      </main>
+    );
+  }
+
 
   const galleryImages = parseListField(plant?.galleryImages);
   const bodyParts = parseListField(plant?.bodyParts);

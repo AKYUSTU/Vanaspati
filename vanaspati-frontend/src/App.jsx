@@ -34,7 +34,13 @@ export default function App() {
   return (
     <>
       <Navbar />
-      <Suspense fallback={<main><p>Loading Vanaspati...</p></main>}>
+      <Suspense fallback={
+        <main style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',minHeight:'60vh',gap:'16px'}}>
+          <div style={{width:'48px',height:'48px',border:'3px solid rgba(74,140,92,0.2)',borderTopColor:'#4a8c5c',borderRadius:'50%',animation:'spin 0.8s linear infinite'}} />
+          <p style={{fontFamily:"'Cormorant Garamond', serif",fontSize:'1.4rem',color:'#2c5f3f',margin:0}}>Loading Vanaspati…</p>
+          <style>{`@keyframes spin{to{transform:rotate(360deg)}}`}</style>
+        </main>
+      }>
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<PageWrapper><HomePage /></PageWrapper>} />

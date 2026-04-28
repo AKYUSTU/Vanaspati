@@ -9,6 +9,45 @@
   color: var(--text-soft);
 }
 
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 40px 0 24px;
+  flex-wrap: wrap;
+}
+
+.pageBtn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1.5px solid var(--border, #d1e8da);
+  background: var(--surface, #fff);
+  color: var(--text-primary, #1a3a2a);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  font-family: inherit;
+}
+
+.pageBtn:hover:not(:disabled) {
+  background: var(--green-50, #e8f5ee);
+  border-color: var(--accent, #4a8c5c);
+  color: var(--accent, #4a8c5c);
+}
+
+.pageBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pageBtnActive {
+  background: var(--accent, #4a8c5c);
+  color: #fff;
+  border-color: var(--accent, #4a8c5c);
+}
+
 @media (max-width: 1024px) {
   .layout {
     grid-template-columns: 1fr;

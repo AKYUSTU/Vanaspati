@@ -31,11 +31,15 @@ export default function FilterSidebar() {
       </select>
       <select value={filters.region} onChange={(e) => setFilter('region', e.target.value)}>
         <option value="">All Regions</option>
-        <option value="North India">North India</option>
-        <option value="South India">South India</option>
-        <option value="Himalayan">Himalayan</option>
-        <option value="Coastal">Coastal</option>
         <option value="Pan-India">Pan-India</option>
+        <option value="North">North India</option>
+        <option value="South">South India</option>
+        <option value="Himalayan">Himalayan</option>
+        <option value="Wetland">Wetlands</option>
+        <option value="Coastal">Coastal / South</option>
+        <option value="Tropical">Tropical India</option>
+        <option value="Tamil">Tamil Nadu</option>
+        <option value="Europe">Europe / Western</option>
       </select>
       <button type="button" onClick={resetFilters}>Reset All Filters</button>
     </aside>

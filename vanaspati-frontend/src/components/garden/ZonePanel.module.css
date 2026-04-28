@@ -1,37 +1,50 @@
 .panel {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
-  width: 360px;
-  background: var(--cream);
-  box-shadow: var(--shadow-modal);
-  padding: 16px;
   display: grid;
   gap: 10px;
+  padding: 16px;
   overflow: auto;
+  height: 100%;
 }
 
-.close {
-  justify-self: end;
-  border: none;
-  background: transparent;
-  font-size: 1rem;
+/* ← Back to Garden button */
+.backBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f0f7f2;
+  color: var(--forest);
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
   cursor: pointer;
+  transition: background 0.15s;
+  justify-self: start;
 }
 
-.cta {
-  border: none;
-  border-radius: 999px;
-  background: var(--forest-light);
-  color: #fff;
-  padding: 10px 14px;
+.backBtn:hover {
+  background: #ddeee5;
+}
+
+.zoneName {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.description {
+  margin: 0;
+  color: var(--paper-text-secondary);
+  font-size: 0.9rem;
 }
 
 .meta {
   margin: 0;
   color: var(--paper-text-secondary);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
 }
 
 .stats {
@@ -105,4 +118,6 @@
   background: #fee2e2;
   border-color: #fecaca;
   color: #991b1b;
+  width: 100%;
+  padding: 8px 12px;
 }
